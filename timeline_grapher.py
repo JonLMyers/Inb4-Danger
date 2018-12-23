@@ -15,6 +15,7 @@ def chat_frequency_ts_grapher(APIKey, Username, chats):
     print("Processing: Data")
     for chat in chats:
         name = chat["Name"]
+        print("    Adding: " + name)
         color = chat["Color"]
         messages = chat["Messages"]
 
@@ -26,8 +27,9 @@ def chat_frequency_ts_grapher(APIKey, Username, chats):
         for date_count in date_count_structures:
             x.append(datetime.datetime(year=int(date_count["Year"]), month=int(date_count["Month"]), day=int(date_count["Day"])))
             y.append(int(date_count["Count"]))
-            plot = go.Scatter(x=x, y=y, name=name, opacity = 0.8, line = dict(color = color))
-            data.append(plot)
+        
+        plot = go.Scatter(x=x, y=y, name=name, opacity = 0.8, line = dict(color = color))
+        data.append(plot)
 
     layout = go.Layout(xaxis = dict(
                     range = [parser.to_unix_time(2014, 10, 20),
