@@ -4,8 +4,6 @@ import plotly
 import datetime
 import plotly.plotly as py
 import plotly.graph_objs as go
-#IF you don't remove this before committing I will kill you.
-### IF YOU DON'T READ THE ABOVE BEFORE COMMITING I
 
 def chat_frequency_ts_grapher(APIKey, Username, chats):
     print("Defining: Plot.ly API Connection.")
