@@ -6,8 +6,22 @@ import plotly.plotly as py
 import plotly.graph_objs as go
 import colorlover as cl
 
+def get_colors():
+    colors = cl.scales['11']['div']['RdBu']
+    new_ordered_colors = []
+    run_num = 5 
+    top_color = 10
+    bot_color = 0
 
-colors = cl.scales['11']['div']['RdBu']
+    while (run_num > 0):
+        new_ordered_colors.append(colors[bot_color])
+        bot_color += 1
+        new_ordered_colors.append(colors[top_color])
+        top_color -= 1
+        run_num -= 1
+
+    return new_ordered_colors
+
 
 def chat_frequency_ts_grapher(APIKey, Username, chats):
     print("Defining: Plot.ly API Connection.")
@@ -51,7 +65,8 @@ def freq_equality_ts_grapher(APIKey, Username, chats):
     color_num = 0
     chat = chats[0]
     names = parser.get_names(chat["Messages"])
-    
+    colors = get_colors()
+
     for name in names:
         print("    Adding: " + name)
         color = colors[color_num]
