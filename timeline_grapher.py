@@ -22,7 +22,6 @@ def get_colors():
 
     return new_ordered_colors
 
-
 def chat_frequency_ts_grapher(APIKey, Username, chats):
     print("Defining: Plot.ly API Connection.")
     plotly.tools.set_credentials_file(username=Username, api_key=APIKey)

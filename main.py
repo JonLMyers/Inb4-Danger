@@ -1,5 +1,6 @@
 import json
 import timeline_grapher
+import experiment
 
 def main():
     configuration_file = "config.json"
@@ -13,6 +14,7 @@ def main():
         print("Graph Options: ")
         print("    1: Chat Frequency Time Series Grapher")
         print("    2: Individual Chat Frequency Time Series Grapher")
+        print("    3: Experimental: Build Message Buckets")
         selector = input("Pick a grapher: ")
 
         if int(selector) == 1:
@@ -21,10 +23,13 @@ def main():
         elif int(selector) == 2:
                 print("Calling: Individual Chat Frequency Time Series Grapher") 
                 url = timeline_grapher.freq_equality_ts_grapher(APIKey, Username, Chats)
+        elif int(selector) == 3:
+                print("Calling Message Block Builder")
+                url = experiment.test_conversation_buckets(Chats)
         else:
                 url = "Na son."
 
-        print(url)
+        print(url[0])
 
 if __name__ == "__main__":
     main()
