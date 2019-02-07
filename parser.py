@@ -64,6 +64,9 @@ def build_block(content, message_block, name):
         # What happens when person B cuts off person B
         # BUT Person B already sent the next message?
             # Store a buffer block or 2 for analysis
+
+# turns out conversations are not easily blocked in an ABABABAB
+# We need to use time/frequency to build blocks from a stream
 # Consider Asyncioing this boi ^.^
 def build_conversation_buckets(chat_logs):
     message_block = []
