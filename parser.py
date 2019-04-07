@@ -104,6 +104,26 @@ def build_conversation_buckets(chat_logs):
 
     return conversation_buckets
 
+#Recommended time_delta of 6 hours
+#Eventually we will compute this for the user
+def get_daily_conversation_bucket(chat_logs, time_delta)
+    message_block = []
+    daily_blocks = []
+    last_message_timestamp = 0
+    
+    with open(chat_logs) as json_messages:
+        data = json.load(json_messages)
+        for message in data['messages']:
+            name = message['sender_name']
+            content = message['content']
+            timestamp = message['timestamp_ms']
 
+        if timestamp + time_Delta > last_message_timestamp:
+            block_json{'ID': str(uuid.uuid4()), 'Block': message_block}
+            daily_blocks.append(block_json)
+            message_block = []
+            message_block.append(message)
+        else:
+            message_block.append(message)
 
             

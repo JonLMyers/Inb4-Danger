@@ -1,0 +1,11 @@
+{
+    "Chats": [
+        {
+            "Name": "Name of the chats",
+            "Messages": "Absolute path to message.json",
+            "Color": "#17BECF"
+        }
+    ],
+    "Username": "YOUR GRAPH USERNAME",
+    "APIKey": "Your graph API key"
+}
